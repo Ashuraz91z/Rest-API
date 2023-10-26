@@ -270,8 +270,8 @@ app.delete("/formulas/delete/:id", (req, res) => {
     });
 });
 
-app.get("/items/parameters/:id", (req, res) => {
-    const itemId = req.params.id;
+app.get("/items/parameters/", (req, res) => {
+    const itemId = req.body.categorie_id;
 
     conn.query("SELECT * FROM items WHERE categorie_id = ?", [itemId], (error, results) => {
         if (error) {
